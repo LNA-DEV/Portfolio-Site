@@ -30,7 +30,6 @@
     <link rel="stylesheet" type="text/css" href="Styles/index.css" media="screen" />
     <link rel="icon" type="image/x-icon" href="<?php echo $icon ?>">
     <link rel="apple-touch-icon" href="<?php echo $icon ?>" />
-    <link rel="stylesheet" href="./DarkMode/dark-mode.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="Scripts/index.js"></script>
 </head>
@@ -40,12 +39,6 @@
     <div class="position-absolute end-0 top-0" id="top"></div>
 
     <div class="t-3 mx-3 position-absolute end-0 top-0">
-
-        <div class="form-check form-switch">
-            <input type="checkbox" class="form-check-input" id="darkSwitch" />
-            <label class="custom-control-label" for="darkSwitch">Dark Mode</label>
-        </div>
-
         <a href="./LegalDetails">Show Legal Details</a>
     </div>
 
@@ -203,7 +196,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
-    <script src="./DarkMode/dark-mode-switch.js"></script>
 </body>
 
 </html>

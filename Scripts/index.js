@@ -21,5 +21,5 @@ function OpenLegalDetails() {
     window.location.href = "LegalDetails.html";
 }
 function SendEmail() {
-    window.open('mailto:nagellukas04@outlook.com');
+    window.open('mailto:lukas@lna-dev.net');
 }

@@ -30,5 +30,5 @@ function OpenLegalDetails()
 
 function SendEmail()
 {
-    window.open('mailto:nagellukas04@outlook.com');
+    window.open('mailto:lukas@lna-dev.net');
 }
