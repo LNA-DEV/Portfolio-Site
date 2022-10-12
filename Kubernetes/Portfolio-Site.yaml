@@ -1,0 +1,113 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: portfolio-site-deployment
+spec:
+  selector:
+    matchLabels:
+      app: portfolio-site
+  template:
+    metadata:
+      labels:
+        app: portfolio-site
+    spec:
+      containers:
+        - name: portfolio-site
+          image: lnadev/portfolio-site:1
+          imagePullPolicy: Always
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+          ports:
+            - containerPort: 80
+              name: port-http
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: portfolio-site-service
+spec:
+  selector:
+    app: portfolio-site
+  ports:
+    - port: 80
+      targetPort: port-http
+      name: http
+
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: portfolio-site-ingress
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt
+spec:
+  tls:
+  - hosts:
+    - 'lna-dev.net'
+    secretName: portfolio-site-cert
+  rules:
+    - host: lna-dev.net
+      http:
+        paths:
+          - path: /portfolio
+            pathType: Prefix
+            backend:
+              service:
+                name: portfolio-site-service
+                port:
+                  number: 80
+    - host: www.lna-dev.net
+      http:
+        paths:
+          - path: /portfolio
+            pathType: Prefix
+            backend:
+              service:
+                name: portfolio-site-service
+                port:
+                  number: 80
+
+---
+# Needed because of HTTP to HTTPS redirecting
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: portfolio-site-ingress-http
+  annotations:
+    traefik.ingress.kubernetes.io/router.entrypoints: web
+    traefik.ingress.kubernetes.io/router.middlewares: default-redirectscheme@kubernetescrd
+spec:
+  rules:
+    - host: lna-dev.net
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: portfolio-site-service
+                port:
+                  number: 80
+    - host: www.lna-dev.net
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: portfolio-site-service
+                port:
+                  number: 80
+
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: redirectscheme
+spec:
+  redirectScheme:
+    scheme: https
+    permanent: true
