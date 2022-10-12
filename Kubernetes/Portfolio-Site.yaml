@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
         - name: portfolio-site
-          image: lnadev/portfolio-site:dev
+          image: lnadev/portfolio-site:1
           imagePullPolicy: Always
           resources:
             limits:
