@@ -38,10 +38,6 @@
 
     <div class="position-absolute end-0 top-0" id="top"></div>
 
-    <div class="t-3 mx-3 position-absolute end-0 top-0">
-        <a href="./LegalDetails">Show Legal Details</a>
-    </div>
-
     <div class="container-fluent">
 
         <div class="chapter">
