@@ -169,7 +169,7 @@
                     <div class="iconRow">
                         <button onclick="SendEmail()" type="button" class="btn btn-dark icon mx-3"><i class="fa fa-envelope"></i></button>
                         <a href="https://github.com/LNA-DEV" class="btn btn-dark icon mx-3"><i class="fa fa-github"></i></a>
-                        <a href="https://mastodon.online/@lna_dev" class="btn btn-dark icon mx-3"><i class="fa fa-mastodon"></i></a>
+                        <a href="https://mastodon.online/@lna_dev" class="btn btn-dark icon mx-3"><img src="./Assets/mastodon-white.svg"></img></a>
                         <a href="https://www.youtube.com/channel/UCe4IFwlwejzqa0qLfLPGbPg" class="btn btn-dark icon mx-3"><i class="fa fa-youtube"></i></a>
                     </div>
 
