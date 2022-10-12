@@ -1,3 +1,18 @@
+@font-face {
+  font-family: "MS UI Gothic";
+  src: url("//db.onlinewebfonts.com/t/f4221c695de0fe4bd63bf82813b53175.eot");
+  src: url("//db.onlinewebfonts.com/t/f4221c695de0fe4bd63bf82813b53175.eot?#iefix")
+      format("embedded-opentype"),
+    url("//db.onlinewebfonts.com/t/f4221c695de0fe4bd63bf82813b53175.woff2")
+      format("woff2"),
+    url("//db.onlinewebfonts.com/t/f4221c695de0fe4bd63bf82813b53175.woff")
+      format("woff"),
+    url("//db.onlinewebfonts.com/t/f4221c695de0fe4bd63bf82813b53175.ttf")
+      format("truetype"),
+    url("//db.onlinewebfonts.com/t/f4221c695de0fe4bd63bf82813b53175.svg#MS Gothic")
+      format("svg");
+}
+
 .subHeading {
   font-size: 200%;
   font-family: MS UI Gothic;
