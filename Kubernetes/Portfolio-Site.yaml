@@ -101,13 +101,3 @@ spec:
                 name: portfolio-site-service
                 port:
                   number: 80
-
----
-apiVersion: traefik.containo.us/v1alpha1
-kind: Middleware
-metadata:
-  name: redirectscheme
-spec:
-  redirectScheme:
-    scheme: https
-    permanent: true
